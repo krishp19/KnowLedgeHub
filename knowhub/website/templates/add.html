@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+
+{%block content%}
+<div class="main-content">
+{% if user.is_authenticated %}
+<h1>Your question....</h1>
+ <br> <br>
+<div class="form-group">
+<form action="" method="post">
+    {%csrf_token%}
+    {{form.media}}
+    {{form.as_p}}
+    <button class="btn btn-secondary">POST</button>
+</form>
+</div>
+<script>
+    var name = "{{ user.id }}";
+    document.getElementById("test").value=name; 
+</script>
+{% else %}
+    You're not allowed here
+
+{% endif %}
+</div>
+{%endblock%}

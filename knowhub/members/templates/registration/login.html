@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block title %} Log In {% endblock %}
+
+{%block content%}
+<div class="main-content">
+<h1>Login</h1>
+ <br> <br>
+<div class="form-group">
+<form action="" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <a href="{% url 'register'%}">Create an account</a>
+    <button class="btn btn-secondary">LOG IN</button>
+</form>
+</div>
+</div>
+{%endblock%}

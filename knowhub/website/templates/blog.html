@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+
+
+{%block content%}
+<div class="main-content">
+<h1>Blogs...</h1>
+
+{% for blog in object_list %}
+<ul>
+<li><a href="{% url 'blog-detail' blog.pk %}">{{blog.title | slice:":54"}} 
+
+</a> <strong>- {{ blog.author }} </strong> 
+<br>{{blog.body | slice:":100"}}</li>
+
+</ul>
+{% endfor %}
+</div>
+{%endblock%}
